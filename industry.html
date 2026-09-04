@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <!-- 1. EL CIELO -->
+      <a-sky color="#87CEEB"></a-sky>
+
+      <!-- 2. EL PISO (Concrete style) -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="20" height="20" color="#7d7d7d"></a-plane>
+
+      <!-- 3. BANDA TRANSPORTADORA (Estructura jerárquica) -->
+      <!-- Usamos una entidad para agrupar toda la banda y moverla junta -->
+      <a-entity id="banda-transportadora" position="-2 0.5 -4">
+        <!-- Superficie de la banda -->
+        <a-box position="0 0.4 0" width="4" height="0.1" depth="0.8" color="#333333"></a-box>
+        <!-- Patas de la banda -->
+        <a-box position="-1.8 0 0" width="0.1" height="0.8" depth="0.1" color="#555"></a-box>
+        <a-box position="1.8 0 0" width="0.1" height="0.8" depth="0.1" color="#555"></a-box>
+        <!-- Un paquete sobre la banda -->
+        <a-box position="0 0.55 0" width="0.4" height="0.4" depth="0.4" color="#D2691E"></a-box>
+      </a-entity>
+
+      <!-- 4. TANQUE DE ALMACENAMIENTO INDUSTRIAL -->
+      <a-entity id="tanque" position="2 0 -5">
+        <!-- Cuerpo del tanque -->
+        <a-cylinder position="0 1.5 0" radius="1" height="3" color="#2F4F4F"></a-cylinder>
+        <!-- Tapa del tanque -->
+        <a-cylinder position="0 3.05 0" radius="1.05" height="0.1" color="#1a1a1a"></a-cylinder>
+        
+        <!-- 5. SENSOR / INDICADOR (Esfera) -->
+        <!-- Si el sensor está en verde, el tanque está operando -->
+        <a-sphere position="0 3.3 0" radius="0.15" color="#00FF00" 
+                  animation="property: material.opacity; from: 1; to: 0.5; dir: alternate; dur: 1000; loop: true">
+        </a-sphere>
+      </a-entity>
+
+      <!-- 6. PANEL DE CONTROL -->
+      <a-entity id="panel" position="0 0 -2">
+        <a-box position="0 0.5 0" width="0.2" height="1" depth="0.2" color="#444"></a-box> <!-- Soporte -->
+        <a-box position="0 1 0" rotation="-20 0 0" width="0.6" height="0.4" depth="0.1" color="#222"></a-box> <!-- Pantalla -->
+      </a-entity>
+
+      <!-- ILUMINACIÓN BÁSICA -->
+      <a-light type="ambient" color="#BBB"></a-light>
+      <a-light type="directional" color="#FFF" intensity="0.6" position="-1 1 2"></a-light>
+
+    </a-scene>
+  </body>
+</html>
