@@ -17,7 +17,7 @@
         <a-sky color="#87CEEB"></a-sky> <!-- Cielo -->
         <a-plane position="0 0 0" rotation="-90 0 0" width="30" height="30" color="#555" metalness="0.5"></a-plane> <!-- Suelo industrial -->
 
-        <!-- PARTE C: MODELADO INDUSTRIAL CON PRIMITIVAS (Lo que pide la guía) -->
+        <!-- PARTE C: MODELADO INDUSTRIAL CON PRIMITIVAS -->
         
         <!-- Banda Transportadora Prototipo -->
         <a-entity id="banda" position="-3 0 -5">
@@ -39,7 +39,7 @@
         </a-entity>
 
         <!-- PARTE D: INTEGRACIÓN DEL MODELO CAD DE SOLIDWORKS -->
-        <!-- Ajusta la posición (position) y la escala (scale) según necesites -->
+       
         <a-entity id="miModeloSolidWorks" 
                   gltf-model="#modeloCAD" 
                   position="-7 0 -10" 
@@ -47,11 +47,11 @@
                   rotation="0 0 0">
         </a-entity>
 
-        <!-- ILUMINACIÓN (Clave para que el modelo CAD se vea metálico y bien definido) -->
+        <!-- ILUMINACIÓN -->
         <a-light type="ambient" color="#FFF" intensity="0.7"></a-light>
         <a-light type="directional" color="#FFF" intensity="0.8" position="-1 4 2" castShadow="true"></a-light>
 
-        <!-- CÁMARA Y CONTROLES (Para moverte con WASD o en VR) -->
+        <!-- CÁMARA Y CONTROLES -->
         <a-entity id="rig" position="0 1.6 0">
             <a-camera look-controls wasd-controls></a-camera>
         </a-entity>
